@@ -36,8 +36,10 @@
  
  Now install docker-ce
  [root@master ~]# yum install docker-ce -y
+ ```
  
- Start and Enable docker service
+ ## Start and enable docker service on all the nodes 
+ ```
  [root@master ~]# systemctl start docker && systemctl enable docker
  ```
  
