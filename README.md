@@ -31,7 +31,8 @@
  [root@master ~]# yum install epel-release -y
  [root@master ~]# yum install policycoreutils-python -y
  
- Install Container-selinux package dependency required for docker-ce installation
+ Download and install Container-selinux package dependency required for docker-ce installation
+ [root@master ~]# wget 
  [root@master ~]# rpm -ivh container-selinux-2.74-1.el7.noarch.rpm
  
  Now install docker-ce
