@@ -1,4 +1,4 @@
-## Kubernetes multinode setup 
+## Kubernetes multinode cluster setup 
 ###  We have 2 machines, 1 master and 1 worker
 ## Pre-requisite 
 
