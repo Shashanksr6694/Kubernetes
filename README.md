@@ -19,6 +19,10 @@
  ### Disable the swap on all the nodes
  ```
  [root@master ~]# swapoff  -a
+
+ Open the fstab file and comment the below line to permanently disable swap
+ [root@master ~]# vim /etc/fstab
+ #/dev/mapper/rhel-swap   swap                    swap    defaults        0 0
  ```
  
  ## Installing kubeadm on all the nodes 
