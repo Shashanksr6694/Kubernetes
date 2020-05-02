@@ -26,7 +26,8 @@
  ```
  
  ## Installing docker-ce on all the nodes
- Download Container-selinux package from this link - ftp://ftp.pbone.net/mirror/ftp.scientificlinux.org/linux/scientific/7x/external_products/extras/x86_64/container-selinux-2.74-1.el7.noarch.rpm
+ Download Container-selinux package from this link - (ftp://ftp.pbone.net/mirror/ftp.scientificlinux.org/linux/scientific 
+ /7x/external_products/extras/x86_64/container-selinux-2.74-1.el7.noarch.rpm)
  ```
  Install pre-requisite packages
  [root@master ~]# yum install epel-release -y
