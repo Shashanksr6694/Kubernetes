@@ -1,4 +1,4 @@
-## Kubernetes multinode cluster setup 
+## Kubernetes multinode cluster setup on RHEL 7.7
 ###  We have 2 machines, 1 master and 1 worker
 ## Pre-requisite 
 
@@ -23,6 +23,22 @@
  Open the fstab file and comment the below line to permanently disable swap
  [root@master ~]# vim /etc/fstab
  #/dev/mapper/rhel-swap   swap                    swap    defaults        0 0
+ ```
+ 
+ ## Installing docker-ce on all the nodes
+ ```
+ Install pre-requisite packages
+ [root@master ~]# yum install epel-release -y
+ [root@master ~]# yum install policycoreutils-python -y
+ 
+ Install Container-selinux package dependency required for docker-ce installation
+ [root@master ~]# rpm -ivh container-selinux-2.74-1.el7.noarch.rpm
+ 
+ Now install docker-ce
+ [root@master ~]# yum install docker-ce -y
+ 
+ Start and Enable docker service
+ [root@master ~]# systemctl start docker && systemctl enable docker
  ```
  
  ## Installing kubeadm on all the nodes 
@@ -60,7 +76,7 @@ EOF
 [root@master ~]# kubeadm init --pod-network-cidr=192.168.0.0/16 --apiserver-advertise-address=0.0.0.0   --apiserver-cert-extra-sans=publicip,privateip,serviceip
 ```
 
-### Use the output of above command and paste on all the worker nodes
+### Use the output of above command and paste on all the worker nodes to join the worker nodes in the cluster
 ```
 [root@master ~]# kubeadm join 192.168.122.1:6443 --token 75ns2m.3p3zfeypoles00ex  --discovery-token-ca-cert-hash sha256:0b98dfae74f00384d456704f494ef92b22cafe96852e935565ca8133b674fce6
 ```
