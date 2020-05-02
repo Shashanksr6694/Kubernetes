@@ -1,6 +1,5 @@
-Kubernetes
 ## Kubernetes multinode setup 
-###  we have 2 machines, 1 master and 1 worker
+###  We have 2 machines, 1 master and 1 worker
 ## Pre-requisite 
 
 ### Disable selinux on all the nodes
