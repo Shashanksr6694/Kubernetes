@@ -15,14 +15,17 @@
  [root@master ~]# modprobe br_netfilter
  [root@master ~]# echo '1' > /proc/sys/net/bridge/bridge-nf-call-iptables
  ```
+ 
  ### Disable the swap on all the nodes
  ```
  [root@master ~]# swapoff  -a
  ```
+ 
  ## Installing kubeadm on all the nodes 
  ```
  [root@master ~]# yum  install kubeadm  -y
  ```
+ 
  ## if kubeadm is not present in your repo 
  you can browse this link [kubernetes repo](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/)  <br/>
  
@@ -39,6 +42,7 @@ EOF
  ```
  [root@master ~]# systemctl enable --now kubelet
  ```
+ 
  ## Do this only on Kubernetes Master 
  We are here using Calico Networking so we need to pass some parameter 
  you can start [Kubernetes_networking](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/create-cluster-kubeadm/) from this  <br/>
@@ -47,8 +51,7 @@ EOF
 [root@master ~]# kubeadm  init --pod-network-cidr=192.168.0.0/16 --piserver-advertise-address=192.168.122.1
 ```
 
-## this is optional 
-### In case of cloud like aws , azure if want to bind public with certificate of kubernetes 
+## This is optional, In case of cloud like aws , azure if want to bind public with certificate of kubernetes 
 ```
 [root@master ~]# kubeadm init --pod-network-cidr=192.168.0.0/16 --apiserver-advertise-address=0.0.0.0   --apiserver-cert-extra-sans=publicip,privateip,serviceip
 ```
