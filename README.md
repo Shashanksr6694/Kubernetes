@@ -76,21 +76,21 @@ After this all nodes will be ready in state
 
 ## Now you can check the nodes status
 ```
-[root@lab ~]# kubectl get nodes
+[root@master ~]# kubectl get nodes
 NAME                 STATUS   ROLES    AGE    VERSION
 lab.example.com      Ready    master   25m    v1.18.2
 worker.example.com   Ready    <none>   106s   v1.18.2
 ```
 ## Now label the worker node with worker role
 ```
-[root@lab ~]# kubectl label node worker.example.com node-role.kubernetes.io/worker=worker
+[root@master ~]# kubectl label node worker.example.com node-role.kubernetes.io/worker=worker
 node/worker.example.com labeled
 ```
 
 ## Now check the all the nodes
 
 ```
-[root@lab ~]# kubectl get nodes
+[root@master ~]# kubectl get nodes
 NAME                 STATUS   ROLES    AGE    VERSION
 lab.example.com      Ready    master   25m    v1.18.2
 worker.example.com   Ready    worker   2m9s   v1.18.2
