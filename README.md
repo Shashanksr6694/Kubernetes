@@ -32,7 +32,7 @@
  [root@master ~]# yum install policycoreutils-python -y
  
  Download and install Container-selinux package dependency required for docker-ce installation
- [root@master ~]# wget 
+ [root@master ~]# wget ftp://ftp.pbone.net/mirror/ftp.scientificlinux.org/linux/scientific/7x/external_products/extras/x86_64/container-selinux-2.74-1.el7.noarch.rpm
  [root@master ~]# rpm -ivh container-selinux-2.74-1.el7.noarch.rpm
  
  Now install docker-ce
