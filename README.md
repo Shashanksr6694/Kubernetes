@@ -47,7 +47,7 @@ EOF
  [root@master ~]# systemctl enable --now kubelet
  ```
  
- ## Do this only on Kubernetes Master 
+ ## Do this only on Kubernetes Master Node (Here we used 192.168.122.1 apiserver address as we have installed worker nodes on KVM and master node on base machine, so worker node will communicate to the api server 192.168.122.1)
  We are here using Calico Networking so we need to pass some parameter 
  you can start [Kubernetes_networking](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/create-cluster-kubeadm/) from this  <br/>
  
