@@ -52,7 +52,7 @@
  ## if kubeadm is not present in your repo 
  you can browse this link [kubernetes repo](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/)  <br/>
  
-## yum can be configure by running this command 
+## Configure kubernetes yum repository by running the below command
 ```
 cat  <<EOF  >/etc/yum.repos.d/kube.repo
 [kube]
