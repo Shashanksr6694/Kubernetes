@@ -79,9 +79,9 @@ EOF
 [root@master ~]# kubeadm init --pod-network-cidr=192.168.0.0/16 --apiserver-advertise-address=0.0.0.0   --apiserver-cert-extra-sans=publicip,privateip,serviceip
 ```
 
-### Use the output of above command and paste on all the worker nodes to join the worker nodes in the cluster
+### Use the output of above command and paste on all the worker nodes to join the worker nodes in the cluster (As we have added only one worker node in the cluster but you may run this command to add more worker nodes)
 ```
-[root@master ~]# kubeadm join 192.168.122.1:6443 --token 75ns2m.3p3zfeypoles00ex  --discovery-token-ca-cert-hash sha256:0b98dfae74f00384d456704f494ef92b22cafe96852e935565ca8133b674fce6
+[root@worker ~]# kubeadm join 192.168.122.1:6443 --token 75ns2m.3p3zfeypoles00ex  --discovery-token-ca-cert-hash sha256:0b98dfae74f00384d456704f494ef92b22cafe96852e935565ca8133b674fce6
 ```
 
 ## Do this step in master node 
